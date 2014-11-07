@@ -1,0 +1,42 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+mainClassName = 'ar.edu.itba.poo.bytemii.Main'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    //mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile name: 'slf4j-api-1.7.7'
+    compile name: 'slf4j-simple-1.7.7'
+}
+
+jar {
+    baseName = 'ByteMii'
+    manifest {
+        attributes 'Implementation-Title': 'ByteMii',
+                'Implementation-Version': version,
+                'Main-Class': 'ar.edu.itba.poo.bytemii.Main'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
+task alljar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'ByteMii',
+                'Implementation-Version': version,
+                'Main-Class': 'ar.edu.itba.poo.bytemii.Main'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
