@@ -4,7 +4,7 @@
 
 > **ACLARACION: _Este programa requiere tener instaldo Java 8 o superior._**
 
-![ByteMii Logo](/src/main/resources/img/logo2.png)
+![ByteMii Logo](/src/main/resources/img/logo.png)
 
 ByteMii es un emulador de Juegos programados con el lenguaje Chip8.
 
@@ -13,16 +13,12 @@ Estos comandos suponen que Gradle 2.1 esta instalado en el sistema.
 En caso de no terlo instalado, reemplazar _gradle_ por _"./gradlew"_ en Linux o _"gradlew.bat"_ en Windows, en los comandos listados debajo... (Aclaracion, para correr los comandos siempre se debe estar en la carpeta del programa, tanto en Linux como en Windows)
 
 ####------ ECLIPSE ------
-- Para poder abrir el programa con Eclipse, correr por consola: `gradle eclipse`
+- Para poder abrir el programa con Eclipse, correr por consola: `gradle eclipse` que crea los archivos necesarios para abrir el proyecto con el Eclipse.
 
-Crea los archivos necesarios para abrir el proyecto con el Eclipse
-
-- Para borrar los archivos previamente creados: `gradle cleanEclipse`
+- Para borrar los archivos previamente creados: `gradle cleanEclipse`.
 
 ####------ IDEA ------
-- Para poder abrir el programa con el Intellij Idea, correr por consola: `gradle eclipse`
-
-Crea los archivos necesarios para abrir el proyecto con el Idea
+- Para poder abrir el programa con el Intellij Idea, correr por consola: `gradle eclipse` que crea los archivos necesarios para abrir el proyecto con el Idea.
 
 - Para borrar los archivos previamente creados:
 
