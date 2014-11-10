@@ -10,7 +10,7 @@ ByteMii :game_die: es un emulador de juegos arcade.
 
 El emulador consta de:
 * Un CPU de las siguientes caracteristicas:
-	* 16 registros de 8 bits llamados Vx, siendo x=0,1,...,F
+	* 16 registros de 8 bits llamados Vx, siendo x = 0x0, 0x1, ..., 0xF
 	* Registro I de 16 bits utilizado para almacenar direcciones de memoria RAM
 	* Un Delay Timer usado para sincronizar los eventos de los juegos.
 	* Un Sound Timer usado para efectos de sonidos
@@ -19,8 +19,10 @@ El emulador consta de:
 * Una placa de sonido
 
 ###USO
-Estos comandos suponen que Gradle 2.1 esta instalado en el sistema.
-En caso de no terlo instalado, reemplazar _gradle_ por _"./gradlew"_ en Linux o _"gradlew.bat"_ en Windows, en los comandos listados debajo... (Aclaracion, para correr los comandos siempre se debe estar en la carpeta del programa, tanto en Linux como en Windows)
+
+1. Navegar por consola hasta la carpeta del Programa (tanto en Windows como en UNIX)
+2. Si se tiene Gradle 2.1 instaldo en el sistema se pueden correr directamente los comandos listados debajo y saltear el punto 3).
+3. En caso de no tener instalado Gradle 2.1, se debe reemplazar el "_gradle_" de los comandos listados debajo por "_./gradlew_" en UNIX o _"gradlew.bat"_ en Windows. Ej: para crear el .jar del programa en linux correr: `./gradlew jar`; y en windows: `"gradlew.bat" jar`
 
 ####------ ECLIPSE ------
 - Para poder abrir el programa con Eclipse, correr por consola: `gradle eclipse` que crea los archivos necesarios para abrir el proyecto con el Eclipse.
