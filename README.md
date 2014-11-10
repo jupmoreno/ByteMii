@@ -1,5 +1,6 @@
 #ByteMii
-##TPE 2014 - Programacion Orientada a Objetos - ITBA
+##TPE Programacion Orientada a Objetos 2014 
+###ITBA
 
 **ACLARACION: _Este programa requiere tener instaldo Java 8 o superior._**
 
@@ -42,18 +43,20 @@ Para solo compilar:
 
 Para compilar y ejecutar:
 
-> gradle run
+```
+gradle run
+```
 
 ####------ JAR ------
 - Para generar el archivo .Jar correr por consola:
 
 > gradle jar
 
-El archivo creado se encuentra en build/lib/ByteMii-X.X.jar
+El archivo creado se encuentra en _build/lib/ByteMii-X.X.jar_
 
 ####------ INSTALACION ------
 - Para generar los archivos necesarios del programa y los ejecutables pertinentes al Sistema Operativo correr:
 
 > gradle install
 
-Esto compila los archivos, genera el .Jar y permite correr el programa mediante un ejecutable (segun S.O.) ubicado en _build/install/bin/_
+Esto compila los archivos, genera el .jar y permite correr el programa mediante un ejecutable (segun S.O.) ubicado en _build/install/bin/_
