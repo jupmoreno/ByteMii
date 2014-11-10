@@ -8,7 +8,7 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.PositionDataInstruction;
 import java.util.Random;
 
 public class RandomData extends PositionDataInstruction {
-	Random rand;
+	private Random rand;
 
 	public RandomData() {
 		this.rand = new Random();
@@ -16,7 +16,7 @@ public class RandomData extends PositionDataInstruction {
 
 	@Override
 	public void execute( CPU cpu ) {
-		cpu.getRegistry(position).set(Bitwise.and(data, rand.nextInt(cpu.getRegistry(position).MAX_VALUE)));
+		cpu.getRegistry(position).set(Bitwise.and(data, rand.nextInt(cpu.getRegistry(position).getMaxValue())));
 		cpu.getInstPointer().add(STEP);
 	}
 

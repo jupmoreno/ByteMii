@@ -4,12 +4,12 @@ import ar.edu.itba.poo.bytemii.emulator.utilities.Bitwise;
 
 public class Register {
 	public static final int MIN_VALUE = 0;
-	public final int MAX_VALUE;
+	public final int maxValue;
 
 	private int data;
 
 	public Register( int maxValue ) {
-		MAX_VALUE = maxValue;
+		this.maxValue = maxValue;
 	}
 
 	public int get() {
@@ -17,9 +17,9 @@ public class Register {
 	}
 
 	public void set(int data) {
-		this.data = data % (MAX_VALUE + 1);
+		this.data = data % (maxValue + 1);
 		if(this.data < 0)
-			this.data += (MAX_VALUE + 1);
+			this.data += (maxValue + 1);
 	}
 
 	public void set(Register reg) {
@@ -41,13 +41,13 @@ public class Register {
 	public boolean add(Register reg) {
 		int ret = data + reg.get();
 		set(ret);
-		return ret > MAX_VALUE;
+		return ret > maxValue;
 	}
 
 	public boolean add(int value) {
 		int ret = data + value;
 		set(ret);
-		return ret > MAX_VALUE;
+		return ret > maxValue;
 	}
 
 	public boolean sub(Register reg) {
@@ -79,5 +79,9 @@ public class Register {
 	@Override
 	public int hashCode() {
 		return data;
+	}
+
+	public int getMaxValue() {
+		return maxValue;
 	}
 }

@@ -14,12 +14,12 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.display.DrawSprite;
 import ar.edu.itba.poo.bytemii.emulator.instructions.keyboard.SkipIfKeyNotPressed;
 import ar.edu.itba.poo.bytemii.emulator.instructions.keyboard.SkipIfKeyPressed;
 import ar.edu.itba.poo.bytemii.emulator.instructions.keyboard.WaitForKey;
-import ar.edu.itba.poo.bytemii.emulator.instructions.registers.memory.SetRAMFromRegistry;
-import ar.edu.itba.poo.bytemii.emulator.instructions.registers.memory.SetRegistryFromRAM;
 import ar.edu.itba.poo.bytemii.emulator.instructions.registers.StoreData;
 import ar.edu.itba.poo.bytemii.emulator.instructions.registers.StoreRegisterData;
 import ar.edu.itba.poo.bytemii.emulator.instructions.registers.bitwise.*;
 import ar.edu.itba.poo.bytemii.emulator.instructions.registers.math.*;
+import ar.edu.itba.poo.bytemii.emulator.instructions.registers.memory.SetRAMFromRegistry;
+import ar.edu.itba.poo.bytemii.emulator.instructions.registers.memory.SetRegistryFromRAM;
 import ar.edu.itba.poo.bytemii.emulator.instructions.registers.registerI.AddRegisterToI;
 import ar.edu.itba.poo.bytemii.emulator.instructions.registers.registerI.StoreDataInI;
 import ar.edu.itba.poo.bytemii.emulator.instructions.registers.registerI.StoreRegisterBCDToI;
@@ -48,16 +48,19 @@ public final class Resources {
 	public static final int KEYBOARD_SIZE = 16;
 	public static final int KEY_PRESSED = 1;
 	public static final int KEY_RELEASED = 0;
-	public static final int[][] KEYBOARD_MAP = {
+	private static final int[][] keyboardMap = {
 			{0x1, 0x2, 0x3, 0xC},
-			{0x4, 0x5, 0x6, 0x6},
+			{0x4, 0x5, 0x6, 0xD},
 			{0x7, 0x8, 0x9, 0xE},
 			{0xA, 0x0, 0xB, 0xF}
 	};
+	public static int[][] getKeyboardMap() {
+		return keyboardMap;
+	}
 
-	//FONTSET
+	//fontSet
 	public static final int FONTSET_POSITION = 0x50;
-	public static final int[] FONTSET = {
+	private static final int[] fontSet = {
 			0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
 			0x20, 0x60, 0x20, 0x20, 0x70, // 1
 			0xF0, 0x10, 0xF0, 0x80, 0xF0, // 2
@@ -75,9 +78,12 @@ public final class Resources {
 			0xF0, 0x80, 0xF0, 0x80, 0xF0, // E
 			0xF0, 0x80, 0xF0, 0x80, 0x80  // F
 	};
+	public static int[] getFontSet() {
+		return fontSet;
+	}
 
 	//INSTRUCTIONS
-	public List<Instruction> instructions;
+	private List<Instruction> instructions;
 	public List<Instruction> getInstructions() {
 		if(instructions != null)
 			return instructions;

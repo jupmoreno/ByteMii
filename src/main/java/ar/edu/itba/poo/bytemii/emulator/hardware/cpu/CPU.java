@@ -10,6 +10,10 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.InstructionException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Emulates a real CPU
+ */
+
 public class CPU {
 	public static final int REGISTRY_SIZE = 16;
 	public static final int INST_POINTER_START = 0x200;
@@ -28,6 +32,12 @@ public class CPU {
 	private OpCode opCode;
 
 	private boolean displayRedraw;
+
+	/**
+	 * Creates a CPU with desired Memory Map and the Instructions it can execute
+	 * @param memoryMap
+	 * @param instructions
+	 */
 
 	public CPU(MemoryMap memoryMap, List<Instruction> instructions) {
 		this.memoryMap = memoryMap;
@@ -55,19 +65,9 @@ public class CPU {
 			registry.add(i, new Register(Bitwise.UNSIGNED_BYTE_MAX));
 	}
 
-	public void fetchOpCode() {
-		byte part1 = memoryMap.getMemory(MemoryType.RAM).get(instPointer.get());
-		byte part2 = memoryMap.getMemory(MemoryType.RAM).get(instPointer.get() + 1);
-		opCode.set(part1, part2);
-		System.out.println("EXECUTING OPCODE: " + Integer.toHexString(opCode.get()));
-	}
-
-	public int decodeOpCode() throws InstructionException {
-		for (int i = 0; i < instructions.size(); i++)
-			if (instructions.get(i).validate(opCode))
-				return i;
-		throw new InstructionException("Instruction not Supported");
-	}
+	/**
+	 * Sets the CPU to it's initial state.
+	 */
 
 	public void clear() {
 		instPointer.set(CPU.INST_POINTER_START);
@@ -79,8 +79,46 @@ public class CPU {
 		stack.clear();
 	}
 
-	public void runOpCode(int index) {
+	/**
+	 * Brings from the memory Map the RAM which has the dump of the ROM File and fetches the next instruction to be decoded.
+	 */
+
+	public void fetchOpCode() {
+		byte part1 = memoryMap.getMemory(MemoryType.RAM).get(instPointer.get());
+		byte part2 = memoryMap.getMemory(MemoryType.RAM).get(instPointer.get() + 1);
+		opCode.set(part1, part2);
+		System.out.println("EXECUTING OPCODE: " + Integer.toHexString(opCode.get()));
+	}
+
+	/**
+	 * Parses the fetched opCode and the CPU decides whether the binary code corresponds to an existing instruction
+	 * @return int
+	 * @throws InstructionException
+	 */
+
+	public int decodeOpCode() throws InstructionException {
+		for (int i = 0; i < instructions.size(); i++)
+			if (instructions.get(i).validate(opCode))
+				return i;
+		throw new InstructionException("Instruction not Supported");
+	}
+
+	/**
+	 * Runs the fetched and decoded instruction, modifying registers of the CPU or allocated memory for the game
+	 * @param index
+	 */
+
+	public void runOpCode(int index) { // TODO: Deberia recibir INDEX o tenerlo dentro del CPU?
 		instructions.get(index).execute(this);
+	}
+
+	/**
+	 * Sets if the Display should be re painted or not.
+	 * @param value boolean
+	 */
+
+	public void setDisplayRedraw( boolean value ) {
+		displayRedraw = value;
 	}
 
 	public MemoryMap getMemoryMap() {
@@ -98,6 +136,12 @@ public class CPU {
 	public Stack getStack() {
 		return stack;
 	}
+
+	/**
+	 * Returns the Register at Registry's position.
+	 * @param position
+	 * @return Register
+	 */
 
 	public Register getRegistry(int position) {
 		return registry.get(position);
@@ -117,9 +161,5 @@ public class CPU {
 
 	public boolean getDisplayRedraw() {
 		return displayRedraw;
-	}
-
-	public void setDisplayRedraw( boolean value ) {
-		displayRedraw = value;
 	}
 }

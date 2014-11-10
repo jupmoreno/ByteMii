@@ -24,12 +24,12 @@ public class AboutDialog extends Stage {
 	private static final int HEIGHT = 130;
 	private static final int TITLE_SIZE = 100;
 
-	private VBox pane;
+	private final VBox pane;
 	private final Label title;
 	private final Label subtitle;
 	private final Label body;
 
-	private Random rand;
+	private final Random rand;
 
 	public AboutDialog(Stage mainStage) {
 		super();
@@ -50,6 +50,7 @@ public class AboutDialog extends Stage {
 		title.setFont(Font.loadFont(getClass().getResourceAsStream(TITLE_FONT_URL), TITLE_SIZE));
 	}
 
+	/*
 	private void configSubtitle() {
 
 	}
@@ -57,6 +58,7 @@ public class AboutDialog extends Stage {
 	private void configBody() {
 
 	}
+	*/
 
 	private void configStage(Stage mainStage) {
 		this.initOwner(mainStage);

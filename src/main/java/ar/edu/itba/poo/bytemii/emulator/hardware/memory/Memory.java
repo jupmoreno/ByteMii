@@ -82,7 +82,7 @@ public class Memory {
 
 	public void fill(int data) {
 		for(int i = 0; i < size; i++)
-			set(i, data);
+			set(i, 0);
 	}
 
     /**

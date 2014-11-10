@@ -8,9 +8,9 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.InstructionException;
 import javafx.application.Platform;
 
 public class Engine implements Runnable {
-	public static final int MIN_SPEED = 1;
-	public static final int DEFAULT_SPEED = 2;
-	public static final int MAX_SPEED = 3;
+	private static final int MIN_SPEED = 1;
+	private static final int DEFAULT_SPEED = 2;
+	private static final int MAX_SPEED = 3;
 
 	private volatile boolean interrupted;
 
@@ -30,6 +30,7 @@ public class Engine implements Runnable {
 	}
 
 	public void run() {
+		interrupted = false;
 		while (!interrupted) {
 			try {
 				cpu.fetchOpCode();
@@ -55,17 +56,17 @@ public class Engine implements Runnable {
 
 			} catch (InstructionException | InterruptedException e) {
 				e.printStackTrace();
-				System.exit(1); // TODO: DSP HAY Q CAMBIARLO
+				// TODO: Preguntarle a Mr Mac
 			}
 		}
 	}
 
-	public void stop() {
-		interrupted = true;
+	public boolean isInterrupted() {
+		return interrupted;
 	}
 
-	public void resume() {
-		interrupted = false;
+	public void setInterrupted( boolean interrupted ) {
+		this.interrupted = interrupted;
 	}
 
 	public void setSpeed( int speed ) {

@@ -10,7 +10,7 @@ public class CallSubroutine extends Jump {
 		if(logger.isDebugEnabled()) {
 			logger.debug("Call subroutine at {}", address);
 		}
-		cpu.getStack().push(cpu.getInstPointer().get()); // TODO: Hacer logger en Stack
+		cpu.getStack().push(cpu.getInstPointer().get());
         super.execute(cpu);
 	}
 

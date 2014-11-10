@@ -10,9 +10,9 @@ public abstract class MultiFilesPlayer implements Playable {
 	protected static final String SOUND_FILE = "sound_file";
 	protected static final String SOUND_ENABLED = "sound_enabled";
 
-	protected Preferences prefs;
+	protected final Preferences prefs;
 
-	protected Map<String, URL> soundFiles = new HashMap<>();
+	protected final Map<String, URL> soundFiles = new HashMap<>();
 	protected String activeSound;
 
 	protected boolean enabled;

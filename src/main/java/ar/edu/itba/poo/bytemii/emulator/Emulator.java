@@ -13,22 +13,19 @@ import java.util.Map;
 import java.util.Set;
 
 public class Emulator {
-	private final Resources resources;
-
 	private final Display display;
 	private final Sound sound;
-
 	private final CPU cpu;
 
 	private final Engine engine;
 	private Thread engineThread;
+	private GameState gameState;
+
 
 	private Map<String, Integer> speeds;
 	private String activeSpeed;
 
 	private File rom;
-
-	GameState gameState;
 
 	public Emulator(Display display, Sound sound) {
 		if(sound == null || display == null)
@@ -36,35 +33,53 @@ public class Emulator {
 
 		this.sound = sound;
 		this.display = display;
-		this.resources = Resources.getInstance();
 
-		cpu = new CPU(initMemoryMap(), resources.getInstructions());
+		cpu = new CPU(initMemoryMap(), Resources.getInstance().getInstructions());
 
 		engine = new Engine(cpu, display, sound);
 
 		gameState = GameState.NO_GAME;
 
 		speeds = new HashMap<>();
-		speeds.put("Slow", 3);
+
+        setAvailableSpeeds();
+	}
+
+	private void setAvailableSpeeds() {
+	    speeds.put("Slow", 3);
 		speeds.put("Normal", 2);
 		speeds.put("Fast", 1);
+
 		activeSpeed = "Normal";
-		setSpeed(activeSpeed);
+		setActiveSpeed(activeSpeed);
 	}
+
+	private MemoryMap initMemoryMap() {
+		MemoryMap memoryMap = new MemoryMap();
+		memoryMap.addMemory(MemoryType.RAM, new Memory(Resources.RAM_SIZE));
+		memoryMap.addMemory(MemoryType.DISPLAY, new Memory(Display.WIDTH * Display.HEIGHT));
+		memoryMap.addMemory(MemoryType.KEYBOARD, new Memory(Resources.KEYBOARD_SIZE));
+		return memoryMap;
+	}
+
+	/**
+	 * Initialices the engine in a new Thread and dumps the ROM file into the RAM memory to start emulation
+	 * @param file
+	 * @throws IOException
+	 */
 
 	public void start(File file) throws IOException {
 		if(file == null || !file.isFile() || !file.canRead())
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Illegal rom file");
 		rom = file;
 
 		if(gameState != GameState.NO_GAME)
-			throw new  IllegalStateException(); // TODO: cual exception tirar?
+			throw new  IllegalStateException("There should be no Game playing"); // TODO: cual exception tirar?
 
 		loadROM(rom);
 		loadFontSet();
 
 		engineThread = new Thread(engine);
-		engine.resume();
 		engineThread.start();
 
 		gameState = GameState.PLAYING;
@@ -74,7 +89,7 @@ public class Emulator {
 		if(gameState == GameState.NO_GAME)
 			throw new  IllegalStateException();
 
-		engine.stop();
+		engine.setInterrupted(true);
 		engineThread = null;
 
 		cpu.getMemoryMap().getMemory(MemoryType.RAM).clear();
@@ -102,7 +117,7 @@ public class Emulator {
 		if(gameState != GameState.PLAYING)
 			throw new  IllegalStateException();
 
-		engine.stop();
+		engine.setInterrupted(true);
 		engineThread = null;
 
 		gameState = GameState.PAUSE;
@@ -112,41 +127,25 @@ public class Emulator {
 		if(gameState != GameState.PAUSE)
 			throw new  IllegalStateException();
 
-		engine.resume();
 		engineThread = new Thread(engine);
 		engineThread.start();
 
 		gameState = GameState.PLAYING;
 	}
 
-	private MemoryMap initMemoryMap() {
-		MemoryMap memoryMap = new MemoryMap();
-		memoryMap.setMemory(MemoryType.RAM, new Memory(Resources.RAM_SIZE));
-		memoryMap.setMemory(MemoryType.DISPLAY, new Memory(Display.WIDTH * Display.HEIGHT));
-		memoryMap.setMemory(MemoryType.KEYBOARD, new Memory(Resources.KEYBOARD_SIZE));
-		return memoryMap;
-	}
-
 	private void loadFontSet() {
-		for(int i = 0; i < Resources.FONTSET.length; i++)
-			cpu.getMemoryMap().getMemory(MemoryType.RAM).set( Resources.FONTSET_POSITION + i, Resources.FONTSET[i]);
+		for(int i = 0; i < Resources.getFontSet().length; i++)
+			cpu.getMemoryMap().getMemory(MemoryType.RAM).set( Resources.FONTSET_POSITION + i, Resources.getFontSet()[i]);
 	}
 
 	private void loadROM(File rom) throws IOException {
-		InputStream in = null;
-		try {
-			in = new BufferedInputStream(new FileInputStream(rom));
-			int data = in.read();
+		try(InputStream in = new BufferedInputStream(new FileInputStream(rom))) { // Automatically cleans up the InputStream
+ 			int data = in.read();
 
 			for(int i = 0; data != -1; i++) {
 				cpu.getMemoryMap().getMemory(MemoryType.RAM).set(Resources.ROM_POSITION + i, data);
 				data = in.read();
 			}
-		} catch(IOException e) {
-			System.out.println("Failed to read ROM file.");
-			e.printStackTrace(); // TODO: SALIR...
-		} finally {
-			try { if(in != null) in.close(); } catch(IOException e) {/* Quiet closing */}
 		}
 	}
 
@@ -158,21 +157,21 @@ public class Emulator {
 		cpu.getMemoryMap().getMemory(MemoryType.KEYBOARD).set(position, Resources.KEY_RELEASED);
 	}
 
-	public Set<String> getSpeeds() {
-		return speeds.keySet();
-	}
-
-	public String getActiveSpeed() {
-		return activeSpeed;
-	}
-
-	public boolean setSpeed(String wantedSpeed) {
+	public boolean setActiveSpeed( String wantedSpeed ) {
 		if(speeds.containsKey(wantedSpeed)) {
 			engine.setSpeed(speeds.get(wantedSpeed));
 			activeSpeed = wantedSpeed;
 			return true;
 		}
 		return false;
+	}
+
+	public Set<String> getSpeeds() {
+		return speeds.keySet();
+	}
+
+	public String getActiveSpeed() {
+		return activeSpeed;
 	}
 
 	public GameState getState() {

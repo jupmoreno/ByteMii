@@ -9,14 +9,10 @@ import javafx.scene.paint.Color;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * TODO: Documentation
- */
-
 public class CanvasDisplay extends Canvas implements Display, BasicGameDisplay {
-	public static final Resolution MIN_RES = new Resolution(WIDTH * 5, HEIGHT * 5);
-	public static final Resolution MAX_RES = new Resolution(WIDTH * 15, HEIGHT * 15);
-	public static final Resolution DEFAULT_RES = new Resolution(WIDTH * 10, HEIGHT * 10);
+	private static final Resolution MIN_RES = new Resolution(WIDTH * 5, HEIGHT * 5);
+	private static final Resolution MAX_RES = new Resolution(WIDTH * 15, HEIGHT * 15);
+	private static final Resolution DEFAULT_RES = new Resolution(WIDTH * 10, HEIGHT * 10);
 
 	private static final Color FORE_COLOR = Color.WHITE;
 	private static final Color BACK_COLOR = Color.valueOf("336699"); // Dark Blue
@@ -25,7 +21,11 @@ public class CanvasDisplay extends Canvas implements Display, BasicGameDisplay {
 	private Color backColor;
 	private Color foreColor;
 
-	private Set<Resolution> resolutionList;
+	private final Set<Resolution> resolutionList;
+
+	public CanvasDisplay() {
+		this(DEFAULT_RES.getWidth(), DEFAULT_RES.getHeight());
+	}
 
 	public CanvasDisplay(double width, double height) {
 		super(width, height);

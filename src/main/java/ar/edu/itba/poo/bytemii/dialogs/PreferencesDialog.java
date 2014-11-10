@@ -24,12 +24,12 @@ public final class PreferencesDialog extends Stage {
 	private static final String FORE_COLOR = "display_fore_color";
 	private static final String BACK_COLOR = "display_back_color";
 
-	private Preferences prefs;
+	private final Preferences prefs;
 
-	Stage mainStage;
-	BasicGameDisplay display;
-	MultiFilesPlayer forePlayer;
-	MultiFilesPlayer backPlayer;
+	private final Stage mainStage;
+	private final BasicGameDisplay display;
+	private final MultiFilesPlayer forePlayer;
+	private final MultiFilesPlayer backPlayer;
 
 	private final TabPane pane;
 	private final Tab displayTab;

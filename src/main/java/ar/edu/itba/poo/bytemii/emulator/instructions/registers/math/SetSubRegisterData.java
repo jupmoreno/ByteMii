@@ -4,7 +4,7 @@ import ar.edu.itba.poo.bytemii.emulator.hardware.cpu.CPU;
 import ar.edu.itba.poo.bytemii.emulator.instructions.OpCode;
 import ar.edu.itba.poo.bytemii.emulator.instructions.DoublePositionInstruction;
 
-public class SetSubRegisterData extends DoublePositionInstruction { // TODO: CAMBIARLE EL NOMBRE
+public class SetSubRegisterData extends DoublePositionInstruction {
 	@Override
 	public void execute( CPU cpu ) {
 		int oldData = cpu.getRegistry(position2).get();

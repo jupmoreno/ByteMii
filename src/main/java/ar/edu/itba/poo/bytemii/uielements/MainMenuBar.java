@@ -10,9 +10,9 @@ import javafx.scene.control.SeparatorMenuItem;
 import javafx.stage.Stage;
 
 public class MainMenuBar extends MenuBar {
-	private Stage prefs;
-	private Stage about;
-	private Stage controls;
+	private final Stage prefs;
+	private final Stage about;
+	private final Stage controls;
 
 	private final Menu menuFile;
 	private final MenuItem itemOpenROM;

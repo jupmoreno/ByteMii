@@ -71,7 +71,7 @@ public class Main extends Application {
 
 		mainPane = new VBox();
 
-		display = new CanvasDisplay(CanvasDisplay.DEFAULT_RES.getWidth(), CanvasDisplay.DEFAULT_RES.getHeight());
+		display = new CanvasDisplay();
 
 		prefsDialog = new PreferencesDialog(mainStage, display, forePlayer, backPlayer);
 		aboutDialog = new AboutDialog(mainStage);
@@ -97,6 +97,7 @@ public class Main extends Application {
 		fileChooser = new FileChooser();
 		fileChooser.setTitle("Open a ROM File...");
 		fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("ROM Files", "*.rom"));
+		fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Chip8 Files", "*.ch8"));
 	}
 
 	private void configMenuBar() {
@@ -107,10 +108,9 @@ public class Main extends Application {
 				if(file != null) {
 					try {
 						emulator.start(file);
-						mainMenuBar.setState( emulator.getState() );
-					} catch(IOException e) {
-						e.printStackTrace();
-						// TODO: EXCEPTION
+						mainMenuBar.setState(emulator.getState());
+					} catch(IllegalArgumentException | IllegalStateException | IOException e) {
+						e.printStackTrace(); // TODO: Ver si esta bien con Mr Mac
 					}
 				}
 			}
@@ -151,7 +151,7 @@ public class Main extends Application {
 		prefsDialog.getSpeedChoice().getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue ) {
-				if(!emulator.setSpeed(prefsDialog.getSpeedChoice().getItems().get(newValue.intValue())))
+				if(!emulator.setActiveSpeed(prefsDialog.getSpeedChoice().getItems().get(newValue.intValue())))
 					prefsDialog.getSpeedChoice().setValue(emulator.getActiveSpeed());
 			}
 		});
