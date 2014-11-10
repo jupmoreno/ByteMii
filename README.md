@@ -6,7 +6,7 @@
 
 ![ByteMii Logo](/src/main/resources/img/logo.png)
 
-ByteMii es un emulador de Juegos programados con el lenguaje Chip8.
+ByteMii :sparkles: es un emulador de Juegos programados con el lenguaje Chip8.
 
 ###USO
 Estos comandos suponen que Gradle 2.1 esta instalado en el sistema.
