@@ -4,7 +4,7 @@
 
 > **ACLARACION: _Este programa requiere tener instaldo Java 8 o superior._**
 
-![ByteMii Logo](/src/main/resources/img/logo.png)
+![ByteMii Logo](/src/main/resources/img/logo2.png)
 
 ByteMii es un emulador de Juegos programados con el lenguaje Chip8.
 
