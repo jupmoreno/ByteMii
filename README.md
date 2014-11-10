@@ -7,7 +7,7 @@ ByteMii es un emulador de Juegos programados con el lenguaje Chip8.
 
 ###USO
 Estos comandos suponen que Gradle 2.1 esta instalado en el sistema.
-En caso de no terlo instalado, reemplazar "gradle" por "./gradlew" en Linux o "gradlew.bat" en Windows, en los comandos listados debajo... (Aclaracion, para correr los comandos siempre se debe estar en la carpeta del programa, tanto en Linux como en Windows)
+En caso de no terlo instalado, reemplazar _gradle_ por _"./gradlew"_ en Linux o _"gradlew.bat"_ en Windows, en los comandos listados debajo... (Aclaracion, para correr los comandos siempre se debe estar en la carpeta del programa, tanto en Linux como en Windows)
 
 ####------ ECLIPSE ------
 - Para poder abrir el programa con Eclipse, correr por consola:
@@ -30,18 +30,19 @@ Crea los archivos necesarios para abrir el proyecto con el Idea
 - Para borrar los archivos previamente creados:
 
 > gradle cleanIdea
+
 > gradle cleanIdeaWorkspace
 
 ####------ CONSOLA ------
 - Para abrir el programa por consola correr:
 
+Para solo compilar:
+
 > gradle build
 
-Para solo compilar o 
+Para compilar y ejecutar:
 
 > gradle run
-
-Para compilar y ejecutar
 
 ####------ JAR ------
 - Para generar el archivo .Jar correr por consola:
