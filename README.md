@@ -39,7 +39,7 @@ Crea los archivos necesarios para abrir el proyecto con el Idea
 
 Para solo compilar:
 
-> gradle build
+`gradle build
 
 Para compilar y ejecutar:
 
