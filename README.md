@@ -4,6 +4,8 @@
 
 > **ACLARACION: _Este programa requiere tener instaldo Java 8 o superior._**
 
+![ByteMii Logo](/src/main/resources/img/logo.png)
+
 ByteMii es un emulador de Juegos programados con el lenguaje Chip8.
 
 ###USO
@@ -37,11 +39,11 @@ Para solo compilar: `gradle build`
 Para compilar y ejecutar: `gradle run`
 
 ####------ JAR ------
-- Para generar el archivo .Jar correr por consola: `gradle jar`
+- Para generar el archivo .jar correr por consola: `gradle jar`
 
-El archivo creado se encuentra en _build/lib/ByteMii-X.X.jar_
+El archivo creado se encuentra en _/build/lib/ByteMii-X.X.jar_
 
 ####------ INSTALACION ------
 - Para generar los archivos necesarios del programa y los ejecutables pertinentes al Sistema Operativo correr: `gradle install`
 
-Esto compila los archivos, genera el .jar y permite correr el programa mediante un ejecutable (segun S.O.) ubicado en _build/install/bin/_
+Esto compila los archivos, genera el .jar y permite correr el programa mediante un ejecutable (segun S.O.) ubicado en _/build/install/bin/_
