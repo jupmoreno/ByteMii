@@ -53,6 +53,6 @@ El archivo creado se encuentra en build/lib/ByteMii-X.X.jar
 ####------ INSTALACION ------
 - Para generar los archivos necesarios del programa y los ejecutables pertinentes al Sistema Operativo correr:
 
--> gradle install
+> gradle install
 
-Esto compila los archivos, genera el .Jar y permite correr el programa mediante un ejecutable (segun S.O.) ubicado en *build/install/bin/*
+Esto compila los archivos, genera el .Jar y permite correr el programa mediante un ejecutable (segun S.O.) ubicado en _build/install/bin/_
