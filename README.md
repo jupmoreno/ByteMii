@@ -10,7 +10,7 @@ Estos comandos suponen que Gradle 2.1 esta instalado en el sistema.
 En caso de no terlo instalado, reemplazar "gradle" por "./gradlew" en Linux o "gradlew.bat" en Windows, en los comandos listados debajo... (Aclaracion, para correr los comandos siempre se debe estar en la carpeta del programa, tanto en Linux como en Windows)
 
 ####------ ECLIPSE ------
-- Para abrir el programa con Eclipse correr por consola:
+- Para poder abrir el programa con Eclipse, correr por consola:
 
 > gradle eclipse
 
@@ -21,7 +21,7 @@ Crea los archivos necesarios para abrir el proyecto con el Eclipse
 > gradle cleanEclipse
 
 ####------ IDEA ------
-- Para abrir el programa con Idea correr por consola:
+- Para poder abrir el programa con el Intellij Idea, correr por consola:
 
 > gradle eclipse
 
@@ -55,4 +55,4 @@ El archivo creado se encuentra en build/lib/ByteMii-X.X.jar
 
 -> gradle install
 
-Esto compila los archivos, genera el .Jar y permite correr el programa mediante un ejecutable (segun S.O.) ubicado en build/install/bin/
+Esto compila los archivos, genera el .Jar y permite correr el programa mediante un ejecutable (segun S.O.) ubicado en *build/install/bin/*
