@@ -1,4 +1,4 @@
-#ByteMii
+#ByteMii :game_die:
 ##TPE Programacion Orientada a Objetos 2014 
 ###ITBA
 
@@ -6,7 +6,17 @@
 
 ![ByteMii Logo](/src/main/resources/img/logo.png)
 
-ByteMii :game_die: es un emulador de Juegos programados con el lenguaje Chip8.
+ByteMii :game_die: es un emulador de juegos arcade.
+
+El emulador consta de:
+* Un CPU de las siguientes caracteristicas:
+	* 16 registros de 8 bits llamados Vx, siendo x=0,1,...,F
+	* Registro I de 16 bits utilizado para almacenar direcciones de memoria RAM
+	* Un Delay Timer usado para sincronizar los eventos de los juegos.
+	* Un Sound Timer usado para efectos de sonidos
+* Una memoria RAM de 6K x 16
+* Un Display de 64 * 32 pixeles bicromatico
+* Una placa de sonido
 
 ###USO
 Estos comandos suponen que Gradle 2.1 esta instalado en el sistema.
