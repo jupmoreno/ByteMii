@@ -12,7 +12,9 @@ En caso de no terlo instalado, reemplazar "gradle" por "./gradlew" en Linux o "g
 ####------ ECLIPSE ------
 - Para abrir el programa con Eclipse correr por consola:
 
-> gradle eclipse // Crea los archivos necesarios para abrir el proyecto con el Eclipse
+> gradle eclipse
+
+Crea los archivos necesarios para abrir el proyecto con el Eclipse
 
 - Para borrar los archivos previamente creados:
 
@@ -33,11 +35,13 @@ Crea los archivos necesarios para abrir el proyecto con el Idea
 ####------ CONSOLA ------
 - Para abrir el programa por consola correr:
 
-> gradle build // Compila
+> gradle build
 
-O
+Para solo compilar o 
 
-> gradle run // Compila y ejecuta
+> gradle run
+
+Para compilar y ejecutar
 
 ####------ JAR ------
 - Para generar el archivo .Jar correr por consola:
