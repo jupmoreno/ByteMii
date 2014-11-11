@@ -31,6 +31,10 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.timers.SetRegToSound;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Provides the emulator with the necessary data for it to run
+ */
+
 public final class Resources {
 	//Singleton
 	private static Resources instance = null;
@@ -48,6 +52,11 @@ public final class Resources {
 	public static final int KEYBOARD_SIZE = 16;
 	public static final int KEY_PRESSED = 1;
 	public static final int KEY_RELEASED = 0;
+
+	/**
+	 * Distribution of keyboard keys
+	 */
+
 	private static final int[][] keyboardMap = {
 			{0x1, 0x2, 0x3, 0xC},
 			{0x4, 0x5, 0x6, 0xD},
@@ -60,6 +69,12 @@ public final class Resources {
 
 	//fontSet
 	public static final int FONTSET_POSITION = 0x50;
+
+	/**
+	 * It represents the posible hexadecimal values ranging from 0x0 to 0xF , represented with 5 bytes each, which are
+	 * used to display on the screen during emulation.
+	 */
+
 	private static final int[] fontSet = {
 			0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
 			0x20, 0x60, 0x20, 0x20, 0x70, // 1
@@ -84,6 +99,12 @@ public final class Resources {
 
 	//INSTRUCTIONS
 	private List<Instruction> instructions;
+
+	/**
+	 * Prepares the list of Instructions the CPU can handle
+	 * @return List
+	 */
+
 	public List<Instruction> getInstructions() {
 		if(instructions != null)
 			return instructions;

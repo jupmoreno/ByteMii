@@ -64,7 +64,7 @@ public class Memory {
 	}
 
 	/**
-	 * TODO: Doc
+	 * Sets data in desired index of memory.
 	 * @param index
 	 * @param data
 	 */

@@ -4,6 +4,12 @@ import ar.edu.itba.poo.bytemii.emulator.hardware.cpu.CPU;
 import ar.edu.itba.poo.bytemii.emulator.instructions.OpCode;
 import ar.edu.itba.poo.bytemii.emulator.instructions.PositionInstruction;
 
+/**
+ * Fx07 - LD Vx, DT
+ * Set Vx = delay timer value.
+ * The value of DT is placed into Vx.
+ */
+
 public class SetDelayToReg extends PositionInstruction {
 	@Override
 	public void execute( CPU cpu ) {

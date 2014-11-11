@@ -6,6 +6,10 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.Instruction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 00EE - RET
+ * Jump to location nnn. The interpreter sets the program counter to nnn.
+ */
 public class RetSubroutine implements Instruction {
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 

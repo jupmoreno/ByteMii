@@ -110,7 +110,7 @@ public class Main extends Application {
 						emulator.start(file);
 						mainMenuBar.setState(emulator.getState());
 					} catch(IllegalArgumentException | IllegalStateException | IOException e) {
-						e.printStackTrace(); // TODO: Ver si esta bien con Mr Mac
+						e.printStackTrace();
 					}
 				}
 			}

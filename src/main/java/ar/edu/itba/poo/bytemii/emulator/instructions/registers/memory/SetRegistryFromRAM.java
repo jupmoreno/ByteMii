@@ -5,6 +5,12 @@ import ar.edu.itba.poo.bytemii.emulator.hardware.memory.MemoryType;
 import ar.edu.itba.poo.bytemii.emulator.instructions.OpCode;
 import ar.edu.itba.poo.bytemii.emulator.instructions.PositionInstruction;
 
+/**
+ * Fx65 - LD Vx, [I]
+ * Read registers V0 through Vx from memory starting at location I.
+ * The interpreter reads values from memory starting at location I into registers V0 through Vx.
+ */
+
 public class SetRegistryFromRAM extends PositionInstruction {
 	public void execute(CPU cpu) {
 		for(int i=0; i <= position; i++) {

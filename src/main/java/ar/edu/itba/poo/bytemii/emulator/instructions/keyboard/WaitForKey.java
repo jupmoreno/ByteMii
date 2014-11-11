@@ -6,6 +6,12 @@ import ar.edu.itba.poo.bytemii.emulator.hardware.memory.MemoryType;
 import ar.edu.itba.poo.bytemii.emulator.instructions.OpCode;
 import ar.edu.itba.poo.bytemii.emulator.instructions.PositionInstruction;
 
+/**
+ * Fx0A - LD Vx, K
+ * Wait for a key press, store the value of the key in Vx.
+ * All execution stops until a key is pressed, then the value of that key is stored in Vx.
+ */
+
 public class WaitForKey extends PositionInstruction {
 	@Override
 	public void execute( CPU cpu ) {

@@ -74,7 +74,7 @@ public class Emulator {
 		rom = file;
 
 		if(gameState != GameState.NO_GAME)
-			throw new  IllegalStateException("There should be no Game playing"); // TODO: cual exception tirar?
+			throw new  IllegalStateException("There should be no Game playing");
 
 		loadROM(rom);
 		loadFontSet();

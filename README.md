@@ -2,7 +2,7 @@
 ##TPE Programacion Orientada a Objetos 2014 
 ###ITBA
 
-> **ACLARACION: _Este programa requiere tener instaldo Java 8 o superior._**
+> **ACLARACION: _Este programa requiere tener instaldo Java 8 o superior con JavaFX8._**
 
 ![ByteMii Logo](/src/main/resources/img/logo.png)
 
@@ -18,11 +18,35 @@ El emulador consta de:
 * Un Display de 64 * 32 pixeles bicromatico
 * Una placa de sonido
 
+Emulator's Memory Map:
++---------------+= 0xFFF (4095)
+|               |
+|               |
+|               |
+|               |
+|               |
+| 0x200 to 0xFFF|
+|     Chip-8    |
+| Program / Data|
+|     Space     |
+|               |
+|               |
+|               |
+|               |
+|               |
+|               |
+|               |
++---------------+= 0x200 (512) Start of most programs
+| 0x000 to 0x1FF|
+| Reserved for  |
+|  interpreter  |
++---------------+= 0x000 (0) Start of RAM
+
 ###USO
 
 1. Navegar por consola hasta la carpeta del Programa (tanto en Windows como en UNIX)
 2. Si se tiene Gradle 2.1 instaldo en el sistema se pueden correr directamente los comandos listados debajo y saltear el punto 3).
-3. En caso de no tener instalado Gradle 2.1, se debe reemplazar el "_gradle_" de los comandos listados debajo por "_./gradlew_" en UNIX o _"gradlew.bat"_ en Windows. Ej: para crear el .jar del programa en linux correr: `./gradlew jar`; y en windows: `"gradlew.bat" jar`
+3. En caso de no tener instalado Gradle 2.1, se debe reemplazar el "_gradle_" de los comandos listados debajo por "_./gradlew_" en UNIX o _"gradlew.bat"_ en Windows. Ej: para crear el .jar del programa en UNIX correr: `./gradlew jar`; y en windows: `"gradlew.bat" jar`
 
 ####------ ECLIPSE ------
 - Para poder abrir el programa con Eclipse, correr por consola: `gradle eclipse` que crea los archivos necesarios para abrir el proyecto con el Eclipse.

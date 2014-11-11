@@ -4,6 +4,12 @@ import ar.edu.itba.poo.bytemii.emulator.hardware.cpu.CPU;
 import ar.edu.itba.poo.bytemii.emulator.instructions.OpCode;
 import ar.edu.itba.poo.bytemii.emulator.instructions.DoublePositionInstruction;
 
+/**
+ * 8xy0 - LD Vx, Vy
+ * Set Vx = Vy.
+ * Stores the value of register Vy in register Vx.
+ */
+
 public class StoreRegisterData extends DoublePositionInstruction {
 	@Override
 	public void execute( CPU cpu ) {

@@ -29,6 +29,9 @@ public class Engine implements Runnable {
 		this.speed = DEFAULT_SPEED;
 	}
 
+	/**
+	 *
+	 */
 	public void run() {
 		interrupted = false;
 		while (!interrupted) {
@@ -45,18 +48,17 @@ public class Engine implements Runnable {
 					});
 					cpu.setDisplayRedraw(false);
 				}
-				if (cpu.getSoundTimer().get() > 0) {
+				if (cpu.getSoundTimer().get() > 0) { //While this is satisfied, the game's sound is played
 					cpu.getSoundTimer().set(cpu.getSoundTimer().get() - 1);
 					sound.play();
 				}
 				if (cpu.getDelayTimer().get() > 0)
 					cpu.getDelayTimer().set(cpu.getDelayTimer().get() - 1);
 
-				Thread.sleep(speed);
+				Thread.sleep(speed); // Simulates original emulator's speed
 
 			} catch (InstructionException | InterruptedException e) {
 				e.printStackTrace();
-				// TODO: Preguntarle a Mr Mac
 			}
 		}
 	}

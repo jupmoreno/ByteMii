@@ -7,6 +7,11 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.Instruction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 00E0 - CLS
+ * Clear the display.
+ */
+
 public class ClearDisplay implements Instruction {
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 

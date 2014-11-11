@@ -14,7 +14,7 @@ public interface Display {
 	byte PIXEL_OFF = 0;
 
 	/**
-	 * TODO: Specify documentation
+	 * Paints the display using the memory as pixel ON and OFF reference
 	 * @param memory must be of WIDTH * HEIGHT size
 	 */
 

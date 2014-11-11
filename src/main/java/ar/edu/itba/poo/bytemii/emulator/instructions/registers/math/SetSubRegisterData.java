@@ -4,6 +4,12 @@ import ar.edu.itba.poo.bytemii.emulator.hardware.cpu.CPU;
 import ar.edu.itba.poo.bytemii.emulator.instructions.OpCode;
 import ar.edu.itba.poo.bytemii.emulator.instructions.DoublePositionInstruction;
 
+/**
+ * 8xy7 - SUBN Vx, Vy
+ * Set Vx = Vy - Vx, set VF = NOT borrow.
+ * If Vy > Vx, then VF is set to 1, otherwise 0. Then Vx is subtracted from Vy, and the results stored in Vx.
+ */
+
 public class SetSubRegisterData extends DoublePositionInstruction {
 	@Override
 	public void execute( CPU cpu ) {

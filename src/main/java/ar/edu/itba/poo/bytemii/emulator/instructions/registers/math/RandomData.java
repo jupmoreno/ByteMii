@@ -7,6 +7,13 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.PositionDataInstruction;
 
 import java.util.Random;
 
+/**
+ * Cxkk - RND Vx, byte
+ * Set Vx = random byte AND kk.
+ * The interpreter generates a random number from 0 to 255, which is then ANDed with the value kk. The results are
+ * stored in Vx. See instruction 8xy2 for more information on AND.
+ */
+
 public class RandomData extends PositionDataInstruction {
 	private Random rand;
 

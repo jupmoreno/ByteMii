@@ -4,6 +4,12 @@ import ar.edu.itba.poo.bytemii.emulator.hardware.cpu.CPU;
 import ar.edu.itba.poo.bytemii.emulator.instructions.OpCode;
 import ar.edu.itba.poo.bytemii.emulator.instructions.PositionDataInstruction;
 
+/**
+ * 6xkk - LD Vx, byte
+ * Set Vx = kk.
+ * The interpreter puts the value kk into register Vx.
+ */
+
 public class StoreData extends PositionDataInstruction {
 	@Override
 	public void execute( CPU cpu ) {

@@ -4,6 +4,12 @@ import ar.edu.itba.poo.bytemii.emulator.hardware.cpu.CPU;
 import ar.edu.itba.poo.bytemii.emulator.instructions.OpCode;
 import ar.edu.itba.poo.bytemii.emulator.instructions.PositionInstruction;
 
+/**
+ * Fx1E - ADD I, Vx
+ * Set I = I + Vx.
+ * The values of I and Vx are added, and the results are stored in I.
+ */
+
 public class AddRegisterToI extends PositionInstruction {
 	@Override
 	public void execute( CPU cpu ) {
