@@ -24,12 +24,12 @@ El emulador consta de:
 2. Si se tiene Gradle 2.1 instaldo en el sistema se pueden correr directamente los comandos listados debajo y saltear el punto 3).
 3. En caso de no tener instalado Gradle 2.1, se debe reemplazar el "_gradle_" de los comandos listados debajo por "_./gradlew_" en UNIX o _"gradlew.bat"_ en Windows. Ej: para crear el .jar del programa en UNIX correr: `./gradlew jar`; y en windows: `"gradlew.bat" jar`
 
-####------ ECLIPSE ------
+####Para ECLIPSE
 - Para poder abrir el programa con Eclipse, correr por consola: `gradle eclipse` que crea los archivos necesarios para abrir el proyecto con el Eclipse.
 
 - Para borrar los archivos previamente creados: `gradle cleanEclipse`.
 
-####------ IDEA ------
+####Para IDEA
 - Para poder abrir el programa con el Intellij Idea, correr por consola: `gradle eclipse` que crea los archivos necesarios para abrir el proyecto con el Idea.
 
 - Para borrar los archivos previamente creados:
@@ -39,19 +39,19 @@ gradle cleanIdea
 gradle cleanIdeaWorkspace
 ```
 
-####------ CONSOLA ------
+####Por CONSOLA
 - Para abrir el programa por consola correr:
 
 Para solo compilar: `gradle build`.
 
 Para compilar y ejecutar: `gradle run`.
 
-####------ JAR ------
+####Crear JAR
 - Para generar el archivo .jar correr por consola: `gradle jar`.
 
 El archivo creado se encuentra en _/build/lib/ByteMii-X.X.jar_
 
-####------ INSTALACION ------
+####Mediante INSTALACION
 - Para generar los archivos necesarios del programa y los ejecutables pertinentes al Sistema Operativo correr: `gradle install`.
 
 Esto compila los archivos, genera el .jar y permite correr el programa mediante un ejecutable (segun S.O.) ubicado en _/build/install/bin/_ .
