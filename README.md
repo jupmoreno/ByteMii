@@ -18,29 +18,28 @@ El emulador consta de:
 * Un Display de 64 * 32 pixeles bicromatico
 * Una placa de sonido
 
-Emulator's Memory Map:
-+---------------+= 0xFFF (4095)
-|               |
-|               |
-|               |
-|               |
-|               |
-| 0x200 to 0xFFF|
-|     Chip-8    |
-| Program / Data|
-|     Space     |
-|               |
-|               |
-|               |
-|               |
-|               |
-|               |
-|               |
-+---------------+= 0x200 (512) Start of most programs
-| 0x000 to 0x1FF|
-| Reserved for  |
-|  interpreter  |
-+---------------+= 0x000 (0) Start of RAM
+Emulator's Memory Map:<br/>
++---------------+= 0xFFF (4095)<br/>
+|               |<br/>
+|               |<br/>
+|               |<br/>
+|               |<br/>
+|               |<br/>
+| 0x200 to 0xFFF|<br/>
+| Program / Data|<br/>
+|     Space     |<br/>
+|               |<br/>
+|               |<br/>
+|               |<br/>
+|               |<br/>
+|               |<br/>
+|               |<br/>
+|               |<br/>
++---------------+= 0x200 (512) Start of most programs<br/>
+| 0x000 to 0x1FF|<br/>
+| Reserved for  |<br/>
+|  interpreter  |<br/>
++---------------+= 0x000 (0) Start of RAM<br/>
 
 ###USO
 
