@@ -9,8 +9,9 @@ public abstract class AddressInstruction implements Instruction {
 	protected int address;
 
 	protected void setValues(OpCode opCode) {
-		System.out.println("Opcode: " + opCode);
 		this.address = opCode.getLast3Bytes();
-		System.out.println("Data: " + address);
+		if(logger.isDebugEnabled()) {
+			logger.debug("Decoding Opcode -> Data: {}", address);
+		}
 	}
 }

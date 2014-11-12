@@ -6,6 +6,8 @@ import ar.edu.itba.poo.bytemii.emulator.hardware.memory.MemoryType;
 import ar.edu.itba.poo.bytemii.emulator.hardware.memory.Stack;
 import ar.edu.itba.poo.bytemii.emulator.instructions.Instruction;
 import ar.edu.itba.poo.bytemii.emulator.instructions.InstructionException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,8 @@ import java.util.List;
  */
 
 public class CPU {
+	private Logger logger = LoggerFactory.getLogger(getClass());
+
 	public static final int REGISTRY_SIZE = 16;
 	public static final int INST_POINTER_START = 0x200;
 
@@ -87,7 +91,9 @@ public class CPU {
 		byte part1 = memoryMap.getMemory(MemoryType.RAM).get(instPointer.get());
 		byte part2 = memoryMap.getMemory(MemoryType.RAM).get(instPointer.get() + 1);
 		opCode.set(part1, part2);
-		System.out.println("EXECUTING OPCODE: " + Integer.toHexString(opCode.get()));
+		if(logger.isDebugEnabled()) {
+			logger.debug("Executing OPCODE: {}" , Integer.toHexString(opCode.get()));
+		}
 	}
 
 	/**
@@ -100,6 +106,7 @@ public class CPU {
 		for (int i = 0; i < instructions.size(); i++)
 			if (instructions.get(i).validate(opCode))
 				return i;
+		logger.error("Instruction {} not supported", opCode);
 		throw new InstructionException("Instruction not Supported");
 	}
 

@@ -12,11 +12,7 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.AddressInstruction;
 public class Jump extends AddressInstruction {
 	@Override
 	public void execute( CPU cpu ) {
-		if(logger.isDebugEnabled()) {
-			logger.debug("Jump {}", address);
-		}
 		cpu.getInstPointer().set(address);
-		logger.info("Instruction Pointer set to {}", cpu.getInstPointer().get());
 	}
 
 	@Override

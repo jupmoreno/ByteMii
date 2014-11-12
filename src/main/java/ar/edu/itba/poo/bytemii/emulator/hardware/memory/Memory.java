@@ -3,9 +3,7 @@ package ar.edu.itba.poo.bytemii.emulator.hardware.memory;
 import java.util.Arrays;
 
 /**
- *
  * Represents a virtual memory of bytes.
- *
  */
 
 public class Memory {
@@ -23,11 +21,6 @@ public class Memory {
 		memory = new byte[size];
 		this.size = size;
 	}
-
-	/**
-	 * Returns size of Memory.
-	 * @return int
-	 */
 
 	public int size() {
 		return size;
@@ -51,23 +44,11 @@ public class Memory {
 		return Byte.toUnsignedInt(memory[index]);
 	}
 
-	/**
-	 * Sets data value into Memory's index.
-	 * @param index cannot be less than 0 or greater than size()
-	 * @param data cannot be less than 0 or greater than 255
-	 */
-
 	public void set(int index, byte data) {
 		if(index < 0 || index >= size)
 			throw new IndexOutOfBoundsException();
 		memory[index] = data;
 	}
-
-	/**
-	 * Sets data in desired index of memory.
-	 * @param index
-	 * @param data
-	 */
 
 	public void set(int index, int data) {
 		if(index < 0 || index >= size)
@@ -75,14 +56,9 @@ public class Memory {
 		memory[index] = (byte) data;
 	}
 
-	/**
-	 * Sets every Memory element to the specified value.
-	 * @param data cannot be less than 0 or greater than 255
-	 */
-
 	public void fill(int data) {
 		for(int i = 0; i < size; i++)
-			set(i, 0);
+			set(i, data);
 	}
 
     /**

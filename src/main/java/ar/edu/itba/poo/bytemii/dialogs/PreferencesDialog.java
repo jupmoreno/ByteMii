@@ -51,7 +51,7 @@ public final class PreferencesDialog extends Stage {
 
 	private ChoiceBox<String> speedChoice;
 
-	public PreferencesDialog( Stage mainStage, BasicGameDisplay display, MultiFilesPlayer forePlayer, MultiFilesPlayer backPlayer ) {
+	public PreferencesDialog(Stage mainStage, BasicGameDisplay display, MultiFilesPlayer forePlayer, MultiFilesPlayer backPlayer) {
 		super();
 		prefs = Preferences.userRoot().node(getClass().toString());
 		this.mainStage = mainStage;

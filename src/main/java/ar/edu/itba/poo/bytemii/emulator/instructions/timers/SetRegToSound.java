@@ -13,11 +13,7 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.PositionInstruction;
 public class SetRegToSound extends PositionInstruction {
 	@Override
 	public void execute( CPU cpu ) {
-		if(logger.isDebugEnabled()) {
-			logger.debug("Load ST{{}} <- V{}{{}}", cpu.getSoundTimer().get(), position, cpu.getRegistry(position).get());
-		}
 		cpu.getSoundTimer().set(cpu.getRegistry(position));
-		logger.info("SoundTimer set to: {}", cpu.getDelayTimer());
 		cpu.getInstPointer().add(STEP);
 	}
 

@@ -13,11 +13,7 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.AddressInstruction;
 public class JumpWithOffset extends AddressInstruction {
 	@Override
 	public void execute( CPU cpu ) {
-		if(logger.isDebugEnabled()) {
-			logger.debug("Jump {} + V0{{}}", address, cpu.getRegistry(0x0));
-		}
 		cpu.getInstPointer().set(address + cpu.getRegistry(0x0).get());
-		logger.info("Instruction Pointer set to {}", cpu.getInstPointer().get());
 	}
 
 	@Override

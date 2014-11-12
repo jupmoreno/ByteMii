@@ -29,7 +29,7 @@ public class MainMenuBar extends MenuBar {
 	private final MenuItem itemAbout;
 
 	public MainMenuBar(  ) {
-		this(null, null, null);
+		this(null, null, null); // Permite que los items Preferences, About y Controls no tengan accion por defecto
 	}
 
 	public MainMenuBar(Stage prefs, Stage about, Stage controls) {

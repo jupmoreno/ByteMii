@@ -49,7 +49,6 @@ public class Resolution {
 		Resolution that = (Resolution) o;
 
 		return height == that.height && width == that.width;
-
 	}
 
 	@Override

@@ -12,9 +12,6 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.controlflow.Jump;
 public class CallSubroutine extends Jump {
 	@Override
 	public void execute( CPU cpu ) {
-		if(logger.isDebugEnabled()) {
-			logger.debug("Call subroutine at {}", address);
-		}
 		cpu.getStack().push(cpu.getInstPointer().get());
         super.execute(cpu);
 	}

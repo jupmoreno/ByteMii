@@ -17,12 +17,8 @@ public class ClearDisplay implements Instruction {
 
 	@Override
 	public void execute( CPU cpu ) {
-		if(logger.isDebugEnabled()) {
-			logger.debug("Clear Display");
-		}
 		cpu.getMemoryMap().getMemory(MemoryType.DISPLAY).clear();
 		cpu.setDisplayRedraw(true);
-		logger.info("Display cleared; Set needRedraw to {}", cpu.getDisplayRedraw());
 		cpu.getInstPointer().add(STEP);
 	}
 

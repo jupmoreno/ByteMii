@@ -11,10 +11,11 @@ public abstract class DoublePositionDataInstruction implements Instruction {
 	protected int data;
 
 	protected void setValues(OpCode opCode) {
-		System.out.println("Opcode: " + opCode);
 		position1 = opCode.getNibble(1);
 		position2 = opCode.getNibble(2);
 		data = opCode.getNibble(3);
-		System.out.println("Pos1: " + position1 + ", Pos2: " + position2 + ", Data: " + data);
+		if(logger.isDebugEnabled()) {
+			logger.debug("Decoding Opcode -> Position 1: {} - Position 2: {} - Data: {}", position1, position2, data);
+		}
 	}
 }

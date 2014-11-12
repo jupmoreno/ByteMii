@@ -13,11 +13,7 @@ import ar.edu.itba.poo.bytemii.emulator.instructions.PositionInstruction;
 public class SetRegToDelay extends PositionInstruction {
 	@Override
 	public void execute( CPU cpu ) {
-		if(logger.isDebugEnabled()) {
-			logger.debug("Load DT{{}} <- V{}{{}}", cpu.getDelayTimer().get(), position, cpu.getRegistry(position).get());
-		}
 		cpu.getDelayTimer().set(cpu.getRegistry(position));
-		logger.info("DelayTimer set to: {}", cpu.getDelayTimer());
 		cpu.getInstPointer().add(STEP);
 	}
 

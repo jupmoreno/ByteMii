@@ -9,8 +9,9 @@ public abstract class PositionInstruction implements Instruction {
 	protected int position;
 
 	protected void setValues(OpCode opCode) {
-		System.out.println("Opcode: " + opCode);
 		position = opCode.getNibble(1);
-		System.out.println("Pos: " + position);
+		if(logger.isDebugEnabled()) {
+			logger.debug("Decoding Opcode -> Position: {}", position);
+		}
 	}
 }

@@ -15,11 +15,7 @@ public class RetSubroutine implements Instruction {
 
 	@Override
 	public void execute( CPU cpu ) {
-		if(logger.isDebugEnabled()) {
-			logger.debug("Return from Subroutine");
-		}
 		cpu.getInstPointer().set(cpu.getStack().pop());
-		logger.info("Instruction Pointer set to {}", cpu.getInstPointer().get());
 		cpu.getInstPointer().add(STEP);
 	}
 

@@ -11,7 +11,6 @@ public class OpCode {
 
 	public void set(int part1, int part2) {
 		data = Bitwise.merge(part1, part2);
-		//System.out.println("OPCODE PART 1: " + Integer.toHexString(part1) + "  OPCODE PART: " + Integer.toHexString(part2));
 	}
 
 	public int getNibble(int position) {

@@ -10,9 +10,10 @@ public abstract class PositionDataInstruction implements Instruction {
 	protected int data;
 
 	protected void setValues(OpCode opCode) {
-		System.out.println("Opcode: " + opCode);
 		position = opCode.getNibble(1);
 		data = opCode.getByte(1);
-		System.out.println("Pos: " + position + ", Data: " + data);
+		if(logger.isDebugEnabled()) {
+			logger.debug("Decoding Opcode -> Position: {} - Data: {}", position, data);
+		}
 	}
 }

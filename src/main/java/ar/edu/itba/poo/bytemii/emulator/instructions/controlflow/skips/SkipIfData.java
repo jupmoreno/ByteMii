@@ -12,12 +12,8 @@ public abstract class SkipIfData extends PositionDataInstruction {
 
 	@Override
 	public void execute( CPU cpu ) {
-		if(logger.isDebugEnabled()) {
-			logger.debug("Skip V{}{{}} {}= {}", position, cpu.getRegistry(position).get(),  condition ? "=" : "!", data);
-		}
 		if((cpu.getRegistry(position).get() == data) == condition) {
 			cpu.getInstPointer().add(STEP);
-			logger.info("Skipped next Instruction");
 		}
 		cpu.getInstPointer().add(STEP);
 	}
