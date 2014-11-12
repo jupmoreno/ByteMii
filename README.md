@@ -35,7 +35,7 @@ El emulador consta de:
 
 1. Navegar por consola hasta la carpeta del Programa (tanto en Windows como en UNIX).
 2. Se requiere tener Gradle 2.1 instaldo en el sistema se pueden correr directamente los comandos listados debajo y saltear el punto 3).
-3. En caso de no tener instalado Gradle 2.1, se debe reemplazar el "_gradle_" de los comandos listados debajo por "_./gradlew_" en UNIX o _"gradlew.bat"_ en Windows. Ej: para crear el .jar del programa en UNIX correr: `./gradlew jar`; y en windows: `gradlew jar` (siempre estando en la carpeta del Programa).
+3. En caso de no tener instalado Gradle 2.1, se debe reemplazar el "_gradle_" de los comandos listados debajo por "_./gradlew_" en UNIX o "_gradlew_" en Windows. Ej: para crear el .jar del programa en UNIX correr: `./gradlew jar`; y en windows: `gradlew jar` (siempre estando en la carpeta del Programa).
 
 ###COMANDOS
 
