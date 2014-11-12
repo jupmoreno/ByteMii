@@ -2,11 +2,13 @@
 ##TPE Programacion Orientada a Objetos 2014 
 ###ITBA
 
-> **ACLARACION: _Este programa requiere tener instaldo Java 8 o superior con JavaFX8._**
+> **ACLARACION: _Este programa requiere tener instalado Java 8 o superior con JavaFX8._**
 
 ![ByteMii Logo](/src/main/resources/img/logo.png)
 
 ByteMii :game_die: es un emulador de juegos arcade.
+
+> **Integrantes del TP: Gonzalo Ibars :collision: y Juan Moreno :sparkles:._**
 
 ### INDEX
 1. DESCRIPCIÓN
@@ -34,7 +36,7 @@ El emulador consta de:
 ###USO
 
 1. Navegar por consola hasta la carpeta del Programa (tanto en Windows como en UNIX).
-2. Se requiere tener Gradle 2.1 instaldo en el sistema se pueden correr directamente los comandos listados debajo y saltear el punto 3).
+2. Se requiere tener Gradle 2.1 instalado en el sistema se pueden correr directamente los comandos listados debajo y saltear el punto 3).
 3. En caso de no tener instalado Gradle 2.1, se debe reemplazar el "_gradle_" de los comandos listados debajo por "_./gradlew_" en UNIX o "_gradlew_" en Windows. Ej: para crear el .jar del programa en UNIX correr: `./gradlew jar`; y en windows: `gradlew jar` (siempre estando en la carpeta del Programa).
 
 ###COMANDOS

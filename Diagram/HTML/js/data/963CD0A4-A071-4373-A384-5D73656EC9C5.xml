@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.3.1:1", "", "«interface» Display", "EARoot/EA1/EA1/EA1/EA1/EA1/EA3/EA1/EA41.htm", "8.png", "E71", "0", "", "Interface0","{B67736A8-D990-4632-88BB-C0D6E18AC7A0}");
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.3.1:2", "", "«interface» Sound", "EARoot/EA1/EA1/EA1/EA1/EA1/EA3/EA1/EA43.htm", "8.png", "E70", "0", "", "Interface0","{00A0C70D-7F59-4801-9495-685B720D871C}");
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.3.1.1", "1", "cpu", "EARoot/EA1/EA1/EA1/EA1/EA1/EA3/EA1/EA1/EA44.htm", "4.png", "", "", "{EE1833BB-323E-460a-8905-B02D1E2E705B}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.3.1.2", "1", "memory", "EARoot/EA1/EA1/EA1/EA1/EA1/EA3/EA1/EA2/EA48.htm", "4.png", "", "", "{90A11C12-B6AF-4b8e-B9D6-6F63DD51036D}", "Package");

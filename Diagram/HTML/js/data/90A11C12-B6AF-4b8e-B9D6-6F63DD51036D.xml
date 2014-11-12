@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.3.1.2:1", "", "Memory", "EARoot/EA1/EA1/EA1/EA1/EA1/EA3/EA1/EA2/EA49.htm", "5.png", "E69", "0", "", "Class0","{B88FB1D0-EC63-4e6d-B9E9-CF085F045F0A}");
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.3.1.2:2", "", "«enumeration» MemoryType", "EARoot/EA1/EA1/EA1/EA1/EA1/EA3/EA1/EA2/EA50.htm", "5.png", "E67", "0", "", "Class0","{E663ADA1-47FA-4afb-92D1-148D7EA8F8C0}");
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.3.1.2:3", "", "Stack", "EARoot/EA1/EA1/EA1/EA1/EA1/EA3/EA1/EA2/EA51.htm", "5.png", "E68", "0", "", "Class0","{D59742EA-E9BA-4dab-8C1D-2AA02FB842F3}");

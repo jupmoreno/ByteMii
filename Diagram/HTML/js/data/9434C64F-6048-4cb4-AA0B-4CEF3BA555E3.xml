@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.4:1", "", "BackSoundPlayer", "EARoot/EA1/EA1/EA1/EA1/EA1/EA4/EA55.htm", "5.png", "E55", "0", "", "Class0","{8DB6605A-94BA-4d15-A8C9-2FD38DADBB3E}");
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.4:2", "", "ForeSoundPlayer", "EARoot/EA1/EA1/EA1/EA1/EA1/EA4/EA56.htm", "5.png", "E52", "0", "", "Class0","{1BF0769E-7259-4b82-B1F1-786DCD2F4D9C}");
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.4:3", "", "MultiFilesPlayer", "EARoot/EA1/EA1/EA1/EA1/EA1/EA4/EA57.htm", "5.png", "E53", "0", "", "Class0","{73BD0616-642E-4df7-A984-C3D231B9EA11}");
+tocTab[tocTab.length] = new Array("0.1.1.1.1.1.4:4", "", "«interface» Playable", "EARoot/EA1/EA1/EA1/EA1/EA1/EA4/EA58.htm", "8.png", "E54", "0", "", "Interface0","{4A34F111-A941-4a11-93F8-EE38F2D4E751}");
