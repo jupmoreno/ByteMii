@@ -8,7 +8,7 @@
 
 ByteMii :game_die: es un emulador de juegos arcade.
 
-> **Integrantes del TP: Gonzalo Ibars :collision: y Juan Moreno :sparkles:._**
+> **Integrantes del TP: Gonzalo Ibars Ingman :collision: y Juan Moreno :sparkles: ._**
 
 ### INDEX
 1. DESCRIPCIÓN
