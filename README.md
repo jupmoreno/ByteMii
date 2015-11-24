@@ -1,27 +1,22 @@
-#ByteMii :game_die:
-##TPE Programacion Orientada a Objetos 2014 
-###ITBA
+# ![ByteMii Logo](/src/main/resources/img/logo.png)
 
 > **ACLARACION: _Este programa requiere tener instalado Java 8 o superior con JavaFX8._**
-
-![ByteMii Logo](/src/main/resources/img/logo.png)
 
 ByteMii :game_die: es un emulador de juegos arcade.
 
 > **Integrantes del TP: _Gonzalo Ibars Ingman :collision: y Juan Moreno :sparkles: ._**
 
-### INDEX
-1. DESCRIPCIÓN
-2. USO
-3. COMANDOS
-	- Para ECLIPSE
-	- Para IDEA
-	- Por CONSOLA
-	- Crear JAR
-	- Mediante INSTALACION
-4. NOTAS
+# Index
+1. Description
+2. Usage
+3. Commands
+	- Eclipse
+	- IDEA
+	- Terminal
+	- JAR
+4. Notes
 
-###DESCRIPCIÓN
+# Description
 
 El emulador consta de:
 * Un CPU de las siguientes caracteristicas:
@@ -33,20 +28,20 @@ El emulador consta de:
 * Un Display de 64 * 32 pixeles bicromatico
 * Una placa de sonido
 
-###USO
+# Usage
 
 1. Navegar por consola hasta la carpeta del Programa (tanto en Windows como en UNIX).
 2. Se requiere tener Gradle 2.1 instalado en el sistema se pueden correr directamente los comandos listados debajo y saltear el punto 3).
 3. En caso de no tener instalado Gradle 2.1, se debe reemplazar el "_gradle_" de los comandos listados debajo por "_./gradlew_" en UNIX o "_gradlew_" en Windows. Ej: para crear el .jar del programa en UNIX correr: `./gradlew jar`; y en windows: `gradlew jar` (siempre estando en la carpeta del Programa).
 
-###COMANDOS
+# Commands
 
-####Para ECLIPSE
+## Eclipse
 - Para poder abrir el programa con Eclipse, correr por consola: `gradle eclipse` que crea los archivos necesarios para abrir el proyecto con el Eclipse.
 
 - Para borrar los archivos previamente creados: `gradle cleanEclipse`.
 
-####Para IDEA
+## IDEA
 - Para poder abrir el programa con el Intellij Idea, correr por consola: `gradle eclipse` que crea los archivos necesarios para abrir el proyecto con el Idea.
 
 - Para borrar los archivos previamente creados:
@@ -56,24 +51,19 @@ gradle cleanIdea
 gradle cleanIdeaWorkspace
 ```
 
-####Por CONSOLA
+## Terminal
 - Para abrir el programa por consola correr:
 
 Para solo compilar: `gradle build`.
 
 Para compilar y ejecutar: `gradle run`.
 
-####Crear JAR
+## JAR
 - Para generar el archivo .jar correr por consola: `gradle jar`.
 
 El archivo creado se encuentra en _/build/lib/ByteMii-X.X.jar_
 
-####Mediante INSTALACION
-- Para generar los archivos necesarios del programa y los ejecutables pertinentes al Sistema Operativo correr: `gradle install`.
-
-Esto compila los archivos, genera el .jar y permite correr el programa mediante un ejecutable (segun S.O.) ubicado en _/build/install/bin/_ .
-
-### NOTAS
+# Notes
 
 - Para realizar una implementación más precisa de los registros del CPU original y al mismo tiempo facilitar la programación del Emulador debido a las restricciones de Java (la ausencia de tipos unsigned), se optó por utilizar el módulo (%) para mantener los valores dentro del rango original.
 
