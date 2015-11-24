@@ -4,20 +4,6 @@
 
 ByteMii :game_die: es un emulador de juegos arcade.
 
-> **Integrantes del TP: _Gonzalo Ibars Ingman :collision: y Juan Moreno :sparkles: ._**
-
-# Index
-1. Description
-2. Usage
-3. Commands
-	- Eclipse
-	- IDEA
-	- Terminal
-	- JAR
-4. Notes
-
-# Description
-
 El emulador consta de:
 * Un CPU de las siguientes caracteristicas:
 	* 16 registros de 8 bits llamados Vx, siendo x = 0x0, 0x1, ..., 0xF
@@ -27,6 +13,17 @@ El emulador consta de:
 * Una memoria RAM de 6K x 16
 * Un Display de 64 * 32 pixeles bicromatico
 * Una placa de sonido
+
+> **Integrantes: _Gonzalo Ibars Ingman y Juan Moreno._**
+
+# Index
+1. Usage
+2. Commands
+	- Eclipse
+	- IDEA
+	- Terminal
+	- JAR
+3. Notes
 
 # Usage
 
